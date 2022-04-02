@@ -1,0 +1,71 @@
+.btn-default {
+  @include pxRem(padding, 14 18);
+  @include pxRem(font-size, 13);
+  @include pxRem(line-height, 19);
+  @include pxRem(border-radius, 39);
+  color: map-get($color, black-a);
+  background-color: map-get($color, white-a);
+  align-self: flex-start;
+  border: 0;
+  font-weight: bold;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-default-outline {
+  @extend .btn-default;
+  @include pxRem(padding, 14 30);
+  @include pxRem(border, solid 1 map-get($color, grey-bd));
+  @include pxRem(top, -87);
+  position: absolute;
+  right: 0;
+}
+
+.badge-sell-off {
+  @include pxRem(padding, 6 12);
+  @include pxRem(top, 25);
+  @include pxRem(left, 19);
+  @include pxRem(font-size, 12);
+  @include pxRem(line-height, 18);
+  @include pxRem(border-radius, 20);
+  color: map-get($color, white-a);
+  background-color: map-get($color, bg-sell-off);
+  position: absolute;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+}
+
+.btn-secondary {
+  @include pxRem(padding, 14 52);
+  @include pxRem(margin-left, 40);
+  @include pxRem(font-size, 13);
+  @include pxRem(line-height, 19);
+  @include pxRem(border-radius, 56);
+  background-color: map-get($color, primary);
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-add-cart {
+  @extend .btn-secondary;
+  @include to-rem-two(padding, 10, 20);
+  margin: 0;
+  cursor: pointer;
+}
+
+.disable {
+  background-color: map-get($color, grey-real);
+}
+
+@media only screen and (max-width: 375px) {
+  .badge-sell-off {
+    @include pxRem(padding, 2 6);
+    @include pxRem(font-size, 8);
+    @include pxRem(line-height, 12);
+    top: 0;
+    left: 0;
+  }
+}

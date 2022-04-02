@@ -1,0 +1,237 @@
+// -----collection-section -----
+.collection-section {
+  @include pxRem(padding, 48 0);
+  .collection-group {
+    .collection {
+      @include pxRem(height, 359);
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      .collect-bg {
+        position: absolute;
+        z-index: -10;
+        width: 100%;
+        height: 100%;
+      }
+      .collection-content {
+        @include pxRem(padding, 0 40 53 40);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      &::after {
+        @include pxRem(padding, 0 20);
+        background-color: map-get($color, black-a);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        content: "";
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+      }
+    }
+  }
+  .detail {
+    @include pxRem(min-height, 140);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .discount {
+    @include pxRem(padding, 6 9);
+    @include pxRem(margin-bottom, 8);
+    position: static;
+    align-self: flex-start;
+  }
+  .collection-title {
+    @include pxRem(margin-bottom, 32);
+    @include pxRem(font-size, 24);
+    @include pxRem(line-height, 30);
+    color: map-get($color, white-a);
+  }
+}
+
+// -----product-section -----
+
+.product-section {
+  @include pxRem(padding, 48 0);
+  .section-header {
+    position: relative;
+    .section-title {
+      @include pxRem(padding-bottom, 39);
+      @include pxRem(font-size, 32);
+      @include pxRem(line-height, 48);
+      font-weight: 300;
+    }
+  }
+  .txt-center {
+    text-align: center;
+  }
+}
+
+//------benefit section------
+
+.benefit-section {
+  background-color: map-get($color, grey-b);
+  .section-header {
+    .section-title {
+      @include pxRem(padding, 48 0 50 0);
+      @include pxRem(font-size, 32);
+      @include pxRem(line-height, 48);
+      text-align: center;
+      font-weight: 300;
+    }
+  }
+  .section-body {
+    @include pxRem(padding-bottom, 54);
+  }
+  .benefit {
+    .benefit-img {
+      @include pxRem(margin-bottom, 46);
+      @include pxRem(width, 68);
+      @include pxRem(height, 68);
+      @include pxRem(border-radius, 10);
+      background-color: map-get($color, white-a);
+      position: relative;
+      .benefit-icon {
+        @include pxRem(width, 37);
+        @include pxRem(height, 37);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .benefit-title {
+      @include pxRem(padding-bottom, 16);
+      @include pxRem(font-size, 16);
+      @include pxRem(line-height, 24);
+      font-weight: bold;
+      &.hover {
+        color: map-get($color, primary);
+      }
+    }
+
+    .benefit-des {
+      @include pxRem(font-size, 14);
+      @include pxRem(line-height, 21);
+      color: map-get($color, grey-d);
+    }
+
+    &:hover {
+      .item-title,
+      .benefit-icon {
+        color: map-get($color, primary);
+      }
+    }
+  }
+}
+
+// -----media query -----
+
+@media only screen and (max-width: 375px) {
+  // -----collection-section -----
+  .collection-section {
+    @include pxRem(padding, 24 0 0 0);
+    .collection-group {
+      .collection {
+        @include pxRem(height, 224);
+        width: 100%;
+        .collection-bg {
+          object-fit: cover;
+        }
+        .collection-content {
+          @include pxRem(padding, 0 0 16 16);
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          height: 100%;
+
+          .discount {
+            @include pxRem(padding, 2 6);
+            @include pxRem(font-size, 8);
+            @include pxRem(line-height, 12);
+          }
+          .detail {
+            @include pxRem(min-height, 68);
+            @include pxRem(min-height, 90);
+            @include pxRem(padding-right, 45);
+          }
+          .collection-title {
+            @include pxRem(margin-bottom, 8);
+            @include pxRem(font-size, 14);
+            @include pxRem(line-height, 21);
+            color: map-get($color, white-a);
+            font-weight: normal;
+          }
+          .collection-link {
+            @include pxRem(padding, 3 9);
+            @include pxRem(left, 16);
+            @include pxRem(bottom, 16);
+            @include pxRem(font-size, 10);
+            @include pxRem(line-height, 15);
+          }
+        }
+      }
+    }
+  }
+
+  // -----product-section -----
+
+  .product-section {
+    .section-header {
+      .section-title {
+        @include pxRem(font-size, 18);
+        @include pxRem(line-height, 27);
+        font-weight: 300;
+      }
+      .txt-center {
+        @include pxRem(padding-bottom, 16);
+        text-align: left;
+      }
+    }
+  }
+
+  .benefit-section {
+    .section-header {
+      .section-title {
+        @include pxRem(font-size, 18);
+        @include pxRem(line-height, 27);
+        font-weight: 300;
+      }
+    }
+    .section-body {
+      @include pxRem(padding-bottom, 28);
+      .benefit-group {
+        display: block;
+        .benefit-item {
+          width: 100%;
+        }
+      }
+      .benefit-vertical {
+        display: flex;
+        justify-content: space-between;
+        .benefit-img {
+          @include pxRem(margin, 0 16 16 0);
+        }
+        .benefit-content {
+          @include pxRem(padding, 5 0);
+          flex: 1;
+          .benefit-title {
+            @include pxRem(padding-bottom, 8);
+            @include pxRem(font-size, 12);
+            @include pxRem(line-height, 18);
+          }
+
+          .benefit-des {
+            @include pxRem(font-size, 10);
+            @include pxRem(line-height, 15);
+          }
+        }
+      }
+    }
+  }
+}

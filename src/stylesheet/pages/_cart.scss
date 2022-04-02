@@ -1,0 +1,128 @@
+.cart-section {
+  .section-header {
+    @include pxRem(padding, 20 0);
+    @include pxRem(font-size, 24);
+    font-weight: bold;
+  }
+  .section-body {
+    .cart-empty {
+      @include pxRem(padding, 50 0);
+      @include pxRem(margin, 20 0);
+      @include pxRem(font-size, 20);
+      @include pxRem(border-radius, 4);
+      background-color: map-get($color, grey-b);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .img-empty {
+      @include pxRem(width, 160);
+      @include pxRem(height, 160);
+    }
+    .link-empty {
+      @include pxRem(padding, 12);
+      @include pxRem(margin-top, 20);
+      @include pxRem(font-size, 20);
+      @include pxRem(border-radius, 4);
+      color: map-get($color, white-a);
+      background-color: map-get($color, primary);
+      cursor: pointer;
+    }
+    .cart-list {
+      @include pxRem(margin, 0 -10);
+    }
+    .cart-item {
+      @include pxRem(padding, 24);
+      @include pxRem(margin-bottom, 30);
+      @include pxRem(border-radius, 4);
+      @include pxRem(border, solid 1 map-get($color, grey-bd));
+      .product-img {
+        @include pxRem(height, 192);
+      }
+      .product-info {
+        @include pxRem(padding-bottom, 0 24);
+        @include pxRem(min-width, 350);
+        @include pxRem(height, 130);
+        @include pxRem(padding-left, 20);
+        text-align: left;
+        .product-name {
+          @include pxRem(font-size, 22);
+        }        
+        .now-price {
+          @include pxRem(font-size, 20);
+        }
+      }
+      .cart-body-right {
+        @include pxRem(height, 192);       
+        text-align: right;
+      }
+      .product-total {
+        @include pxRem(font-size, 24);
+        font-weight: bold;
+      }
+      .badge-sell {
+        @include pxRem(padding, 10 0);
+        width: 40%;
+      }
+      .real-price {
+        @include pxRem(padding-right, 10);
+        color: map-get($color, grey-w);
+        text-decoration: line-through;
+      }
+      .percent-sell-off {
+        @include pxRem(font-size, 14);
+        color: map-get($color, bg-sell-off);
+        font-weight: bold;
+      }
+      .product-amount {
+        .amount {
+          @include pxRem(padding, 5 10);
+          @include pxRem(border, solid 1 map-get($color, grey-bd));
+          @include pxRem(border-radius, 4);
+          cursor: pointer;
+        }
+        .amount-now {
+          @include pxRem(padding, 6 2);
+          @include pxRem(width, 50);
+          @include pxRem(border-radius, 5);
+          @include pxRem(border-width, 1);
+          border-color: map-get($color, pink-am);
+          text-align: center;
+        }
+      }
+      .remove {
+        @include pxRem(font-size, 14);
+        color: map-get($color, grey-w);
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+  .cart-total-price {
+    @include pxRem(padding-bottom, 50);
+    .cart-total {
+      @include pxRem(padding, 24);
+      @include pxRem(border, solid 1 map-get($color, grey-bd));
+      @include pxRem(border-radius, 4);
+    }
+    .cart-title {
+      @include pxRem(font-size, 16);
+      font-weight: bold;
+    }
+    .cart-coupon {
+      @include pxRem(font-size, 32);
+      font-weight: 500;
+      text-align: right;
+    }
+    .cart-submit {
+      @include pxRem(padding, 18 80);
+      @include pxRem(margin-top, 10);
+      @include pxRem(border-radius, 4);
+      color: map-get($color, black-a);
+      background-color: map-get($color, primary);
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.product-section {
+  .section-body {
+    position: relative;
+  }
+  .product-item {
+    position: relative;
+    @include pxRem(padding-bottom, 24);
+  }
+  .product {
+    position: relative;
+    .btn-sell-off {
+      @include pxRem(top, 24);
+      @include pxRem(left, 28);
+    }
+    &-img {
+      @include pxRem(padding-bottom, 15);
+      @include pxRem(height, 400);
+      width: 100%;
+    }
+    &-name {
+      @include pxRem(font-size, 16);
+      @include pxRem(line-height, 24);
+      font-weight: 300;
+    }
+    &-category {
+      @include pxRem(margin, 4 0 6 0);
+      @include pxRem(font-size, 14);
+      color: map-get($color, primary);
+      font-weight: bold;
+    }
+    &-price {
+      @include pxRem(font-size, 20);
+      @include pxRem(line-height, 30);
+      position: relative;
+      &.price-off {
+        color: map-get($color, bg-sell-off);
+      }
+      &.tag::after {
+        @include pxRem(font-size, 20);
+        @include pxRem(line-height, 30);
+        color: map-get($color, grey-real);
+        position: absolute;
+        content: attr(real-price);
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  .cart {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .product:hover {
+    .cart {
+      display: block;
+    }
+    .product-img {
+      opacity: 0.7;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .product-section {
+    .section-body {
+      .section-link {
+        @include pxRem(font-size, 10);
+        @include pxRem(top, -60);
+        right: 0;
+        padding: 0;
+        border: 0;
+        align-self: flex-end;
+      }
+    }
+    .product-item {
+      @include pxRem(padding-bottom, 12);
+      .badge-sell-off {
+        @include pxRem(top, 12);
+        @include pxRem(left, 9);
+      }
+      .product-img {
+        padding-bottom: 0;
+      }
+      .product-name {
+        @include pxRem(font-size, 12);
+        @include pxRem(line-height, 12);
+        font-weight: 300;
+      }
+      .product-price {
+        @include pxRem(font-size, 10);
+        @include pxRem(line-height, 15);
+
+        &.tag::after {
+          @include pxRem(font-size, 10);
+          @include pxRem(line-height, 15);
+        }
+      }
+    }
+  }
+}

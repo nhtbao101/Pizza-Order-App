@@ -1,0 +1,101 @@
+.subscribe-section {
+  @include pxRem(height, 217);
+  position: relative;
+  z-index: 0;
+  .background-ft {
+    position: absolute;
+    z-index: -30;
+    width: 100%;
+    height: 100%;
+    &-ip {
+      display: none;
+    }
+  }
+  &::after {
+    background-image: map-get($background-overlay, overlay-ft);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+  .sub-content {
+    height: 100%;
+  }
+
+  .sub-info {
+    @include pxRem(font-size, 24);
+    @include pxRem(line-height, 36);
+    color: map-get($color, white-a);
+    width: 50%;
+  }
+
+  .sub-email {
+    width: 50%;
+    .txt-mail {
+      @include pxRem(padding, 24);
+      @include pxRem(height, 20);
+      @include pxRem(font-size, 13);
+      @include pxRem(line-height, 19);
+      @include pxRem(border-radius, 61);
+      color: map-get($color, grey-w);
+      background-color: map-get($color, white-a);
+      width: 100%;
+      align-items: center;
+      border: 0;
+      outline: none;
+    }
+  }
+}
+
+// -----media screen -----
+
+@media only screen and (max-width: 375px) {
+  .subscribe-section {
+    .background-ft {
+      display: none;
+      &-ip {
+        display: block;
+        position: absolute;
+        z-index: -30;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .sub-content {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+    .sub-info {
+      @include pxRem(padding, 24 117 24 0);
+      @include pxRem(font-size, 14);
+      @include pxRem(line-height, 21);
+      width: 100%;
+    }
+    .sub-email {
+      @include pxRem(height, 32);
+      display: block;
+      padding: 0;
+      width: 100%;
+      text-align: start;
+      .txt-mail {
+        @include pxRem(padding, 16 12);
+        @include pxRem(margin-bottom, 12);
+        @include pxRem(font-size, 12);
+        &::placeholder {
+          opacity: 0.7;
+        }
+      }
+      .button {
+        @include pxRem(padding, 7 19);
+        @include pxRem(font-size, 13);
+        @include pxRem(line-height, 19);
+      }
+    }
+  }
+}

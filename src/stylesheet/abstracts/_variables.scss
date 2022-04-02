@@ -1,0 +1,30 @@
+$color: (
+  white-a: #fff,
+  secondary: #2264d1,
+  greyish: #ebf2ff,
+  primary: #fbb03b,
+  black-a: #333333,
+  banner-des: #a8a8a8,
+  bg-sell-off: #f00,
+  grey-real: #cecece,
+  grey-w: #ababab,
+  grey-b: #f7f7f7,
+  grey-d: #808080,
+  grey-bd: #c4c4c4,
+  grey-l: #787885,
+  pink-am: #e6e6,
+);
+
+$background-overlay: (
+  overlay-bn:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%),
+  overlay-it: #333333,
+  overlay-ft: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%),
+);
+
+$font-weight: (
+  title: bold,
+  item: 300,
+);
+
+$size-base: 16;

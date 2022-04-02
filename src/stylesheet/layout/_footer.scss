@@ -1,0 +1,127 @@
+.footer {
+  width: 100%;
+  color: map-get($color, white-a);
+  background-color: map-get($color, primary);
+
+  & .info-link {
+    color: map-get($color, white-a);
+  }
+
+  .top-section {
+    @include pxRem(padding, 46 0 32 0);
+    .footer-left {
+      @include pxRem(max-width, 540);
+      @include pxRem(padding-right, 169);
+    }
+
+    .footer-right {
+      @include pxRem(max-width, 686);
+      @include pxRem(font-size, 14);
+      line-height: 0.15;
+    }
+  }
+  .footer-left {
+    .footer-content {
+      @include pxRem(padding, 24 0 62 0);
+      @include pxRem(font-size, 14);
+      @include pxRem(line-height, 21);
+      color: map-get($color, white-a);
+    }
+
+    .footer-network {
+      @include pxRem(max-width, 203);
+    }
+  }
+  .footer-right {
+    .genenal-info {
+      display: flex;
+      padding: 0;
+      .footer-general {
+        padding: 0;
+
+        &.shopping-online {
+          @include pxRem(padding-right, 87);
+        }
+        &.information {
+          @include pxRem(padding-right, 52);
+        }
+      }
+
+      & .info-item,
+      & .info-link {
+        @include pxRem(font-size, 14);
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      .info-group {
+        @include pxRem(padding-right, 8);
+        li {
+          @include pxRem(padding-bottom, 19);
+          color: map-get($color, white-a);
+        }
+      }
+
+      & .info-title {
+        @include pxRem(padding-bottom, 19);
+        @include pxRem(font-size, 16);
+        @include pxRem(line-height, 24);
+        color: map-get($color, white-a);
+        font-weight: bold;
+      }
+    }
+  }
+  .bottom-section {
+    .bottom-title {
+      @include pxRem(padding, 24 0);
+      @include pxRem(font-size, 12);
+      @include pxRem(line-height, 18);
+      @include pxRem(border-top, solid 1 map-get($color, white-a));
+      color: map-get($color, white-a);
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .footer {
+    justify-content: flex-start;
+    .top-section {
+      display: block;
+      .footer-left {
+        padding-right: 0;
+        .footer-content {
+          @include pxRem(font-size, 14);
+          font-weight: normal;
+        }
+        .footer-network {
+          display: none;
+        }
+      }
+    }
+    .footer-right {
+      .genenal-info {
+        display: block;
+        justify-content: flex-start;
+        & .info-item {
+          .info-link {
+            @include pxRem(font-size, 12);
+          }
+        }
+        .footer-general {
+          @include pxRem(font-size, 24);          
+        }
+      }
+
+      .info-title {
+        @include pxRem(padding-bottom, 16);          
+      }
+
+      .info-group {
+        .info-item {
+          @include pxRem(padding-bottom, 5 !important);
+        }
+      }
+    }
+  }
+}

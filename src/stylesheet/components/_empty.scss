@@ -1,0 +1,8 @@
+.empty {
+  @include pxRem(padding-top, 200); 
+  @include pxRem(height, 400); 
+  @include pxRem(font-size, 20);
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
