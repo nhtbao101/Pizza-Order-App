@@ -1,0 +1,81 @@
+.product-detail {
+  @include pxRem(margin-top, 40);
+  min-height: 70vh;
+  .image {
+    width: 100%;
+  }
+  .product {
+    &-name {
+      @include pxRem(font-size, 20);
+      @include pxRem(margin-bottom, 10);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+  .size-section,
+  .topping-section {
+    @include pxRem(margin, 20 0);
+    @include pxRem(border-radius, 5);
+    border: 1px solid map-get($color, gray-bd);
+
+    .group-title {
+      @include pxRem(margin-left, 10);
+    }
+
+    .checkbox-group,
+    .radio-group {
+      @include pxRem(padding, 0 10);
+      @include pxRem(margin-top, -10);
+      display: flex;
+      align-items: center;
+      flex: 1 1 0px;
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+      display: none;
+    }
+    label {
+      @include pxRem(margin, 20 0);
+      color: map-get($color, primary);
+      text-align: center;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    input[type='radio']:checked + label,
+    input[type='checkbox']:checked + label {
+      color: map-get($color, white-a);
+      background-color: map-get($color, primary);
+      span {
+        color: map-get($color, white-a);
+      }
+    }
+    .radio-item {
+      position: relative;
+      .label-price {
+        @include pxRem(font-size, 14);
+        color: map-get($color, primary);
+        font-weight: 800;
+        position: absolute;
+        top: 50%;
+        right: 12%;
+        transform: translateY(-53%);
+      }
+      .size-item:hover,
+      .topping-item:hover {
+        label,
+        span {
+          color: white;
+        }
+      }
+    }
+  }
+  .group-add-cart {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    span {
+      @include pxRem(font-size, 20);
+      font-weight: bold;
+    }
+  }
+}

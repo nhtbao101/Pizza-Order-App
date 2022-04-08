@@ -1,0 +1,36 @@
+.input-form,
+.customer-select {
+  @include pxRem(margin-bottom, 20);
+  .label-contain {
+    @include pxRem(padding-top, 15);
+    @include pxRem(margin-bottom, 10);
+    span {
+      width: 100%;
+      line-height: 1.71;
+      font-weight: bold;
+    }
+  }
+  input[type='text'],
+  input[type='number'] {
+    @include pxRem(font-size, 14);
+    @include pxRem(height, 45);
+    @include pxRem(border-radius, 5);
+    @include pxRem(padding, 13 13 13 16);
+    width: 100%;
+    background-color: map-get($color, 'bg-gray');
+    border: none;
+    &:focus {
+      outline: none;
+    }
+    &.form-controls-error {
+      background-color: map-get($color, pink);
+    }
+  }
+  .text-note {
+    @include pxRem(font-size, 12);
+    @include pxRem(margin-top, 10);
+    font-weight: 500;
+    display: block;
+    width: 100%;
+  }
+}

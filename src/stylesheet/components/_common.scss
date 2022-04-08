@@ -1,0 +1,18 @@
+form {
+  padding: 0 50px;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.select-error__control {
+  background-color: map-get($color, pink) !important;
+}
+
+.text-error {
+  @include pxRem(font-size, 12);
+  color: map-get($color, 'err-msg');
+  font-weight: bold;
+  line-height: 2;
+}
