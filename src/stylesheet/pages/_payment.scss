@@ -1,0 +1,31 @@
+.payment-section {
+  form {
+    @include pxRem(margin, 30 160);
+    @include pxRem(padding, 60 40);
+    @include pxRem(border-radius, 10);
+    border: 1px solid map-get($color, gray-bd);
+  }
+  .box {
+    @include pxRem(padding, 30);
+    @include pxRem(max-width, 600);
+    @include pxRem(border-radius, 20);
+    background-color: map-get($color, primary);
+    margin: auto;
+    span {
+      color: map-get($color, black-a);
+    }
+    .text-error {
+      color: map-get($color, white-a);
+    }
+    input {
+      @include pxRem(font-size, 18);
+    }
+  }
+  .button-submit {
+    @include pxRem(margin-top, 40);
+    text-align: center;
+    .btn-submit:hover {
+      background-color: map-get($color, primary-hover);
+    }
+  }
+}

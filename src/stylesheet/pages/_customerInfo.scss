@@ -1,0 +1,12 @@
+.customer-info {
+  form {
+    max-width: 800px;
+    margin: auto;
+  }
+  .input-form {
+  }
+  .button-submit {
+    @include pxRem(margin-top, 40);
+    text-align: center;
+  }
+}

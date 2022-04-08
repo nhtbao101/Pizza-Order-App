@@ -1,0 +1,54 @@
+.header {
+  @include pxRem(padding, 24 0);
+  border-bottom: 1px solid map-get($color, gray-bd);
+  width: 100%;
+  .header-left,
+  .header-right {
+    position: relative;
+  }
+  .logo {
+    @include pxRem(width, 200);
+  }
+
+  .header-right {
+    display: flex;
+    .address {
+      @include pxRem(margin-right, 50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon-location {
+        @include pxRem(width, 50);
+      }
+      &-text {
+        align-self: center;
+      }
+      span {
+        font-weight: bold;
+      }
+    }
+    .option-item {
+      align-self: center;
+    }
+  }
+  .cart {
+    position: relative;
+    .cart-icon {
+      @include pxRem(padding, 5);
+      background-color: map-get($color, primary);
+      border-radius: 25%;
+    }
+    &::after {
+      @include pxRem(right, -8);
+      @include pxRem(top, -6);
+      @include pxRem(padding, 2 5);
+      @include pxRem(font-size, 10);
+      color: map-get($color, white-a);
+      background-color: map-get($color, err-msg);
+      content: attr(data-cart);
+      position: absolute;
+      font-weight: bold;
+      border-radius: 50%;
+    }
+  }
+}

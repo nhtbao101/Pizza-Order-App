@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@1,100&family=Rubik+Microbe&display=swap');
+
+*,
+::before,
+::after {
+  @include pxRem(font-size, 16);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Anek Tamil', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: map-get($color, black-a);
+}
+
+html {
+  font-size: #{$size-base}px;
+}
+
+a {
+  text-decoration: none;
+  color: map-get($color, grey-l);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+select {
+  appearance: none;
+}
+
+body {
+  position: relative;
+}
+
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+}

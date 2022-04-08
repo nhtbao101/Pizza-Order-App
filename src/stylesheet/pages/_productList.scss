@@ -1,0 +1,40 @@
+.product-list {
+  @include pxRem(padding, 60 0);
+  background-image: url('../../assets/background.jpeg');
+  .product-item {
+    @include pxRem(margin-bottom, 40);
+    @include pxRem(border-radius, 5);
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px,
+      rgb(0 0 0 / 12%) 0px 1px 8px 0;
+    overflow: hidden;
+    .product-image {
+      width: 100%;
+      transition: transform 0.2s;
+    }
+    .product-info {
+      @include pxRem(padding, 10);
+      background-color: map-get($color, white-a);
+      .product-name {
+        @include pxRem(padding, 10 0);
+        @include pxRem(font-size, 18);
+        color: map-get($color, primary);
+        font-weight: bold;
+      }
+      .description {
+        @include pxRem(margin, 15 0);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        -webkit-box-orient: vertical;
+      }
+    }
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      .product-image {
+        transform: scale(1.1);
+        z-index: -1;
+      }
+    }
+  }
+}

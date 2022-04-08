@@ -1,0 +1,121 @@
+.cart-section {
+  .section-header {
+    @include pxRem(padding, 20 0);
+    @include pxRem(font-size, 24);
+    font-weight: bold;
+  }
+  .section-body {
+    .cart-empty {
+      @include pxRem(padding, 50 0);
+      @include pxRem(margin, 20 0);
+      @include pxRem(font-size, 20);
+      @include pxRem(border-radius, 4);
+      background-color: map-get($color, gray-b);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .img-empty {
+      @include pxRem(width, 160);
+      @include pxRem(height, 160);
+    }
+    .link-empty {
+      @include pxRem(padding, 12);
+      @include pxRem(margin-top, 20);
+      @include pxRem(font-size, 20);
+      @include pxRem(border-radius, 4);
+      color: map-get($color, white-a);
+      background-color: map-get($color, primary);
+      cursor: pointer;
+    }
+    .cart-list {
+      @include pxRem(margin, 0 -10);
+    }
+    .cart-item {
+      @include pxRem(padding, 12);
+      @include pxRem(margin-bottom, 30);
+      @include pxRem(border-radius, 4);
+      @include pxRem(border, solid 1 map-get($color, gray-bd));
+      .product-img {
+        @include pxRem(height, 192);
+      }
+      .product-info {
+        @include pxRem(max-width, 300);
+        @include pxRem(padding-left, 10);
+        text-align: left;
+        .product-name,
+        .description,
+        .size-group,
+        .topping-group {
+          @include pxRem(margin-bottom, 10);
+        }
+        .product-name {
+          @include pxRem(font-size, 18);
+          color: map-get($color, primary);
+        }
+        .description {
+          @include pxRem(max-width, 300);
+        }
+      }
+      .cart-body-right {
+        @include pxRem(height, 192);
+        text-align: right;
+      }
+      .product-total {
+        @include pxRem(font-size, 24);
+        font-weight: bold;
+      }
+      .product-amount {
+        .amount {
+          @include pxRem(padding, 5 10);
+          @include pxRem(border, solid 1 map-get($color, gray-bd));
+          @include pxRem(border-radius, 4);
+          cursor: pointer;
+        }
+        .amount-now {
+          @include pxRem(padding, 6 2);
+          @include pxRem(width, 50);
+          @include pxRem(border-radius, 5);
+          @include pxRem(border-width, 1);
+          border-color: map-get($color, pink-am);
+          text-align: center;
+        }
+        .disable {
+          background-color: map-get($color, gray-disable);
+          cursor: no-drop;
+        }
+      }
+      .remove {
+        @include pxRem(font-size, 14);
+        color: map-get($color, gray-d);
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+  .cart-total-price {
+    @include pxRem(padding-bottom, 50);
+    .cart-total {
+      @include pxRem(padding, 24);
+      @include pxRem(border, solid 1 map-get($color, gray-bd));
+      @include pxRem(border-radius, 4);
+    }
+    .cart-title {
+      @include pxRem(font-size, 24);
+      font-weight: bold;
+    }
+    .cart-coupon {
+      @include pxRem(font-size, 32);
+      font-weight: 500;
+      text-align: right;
+    }
+    .cart-submit {
+      @include pxRem(padding, 18 80);
+      @include pxRem(margin-top, 10);
+      @include pxRem(border-radius, 4);
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

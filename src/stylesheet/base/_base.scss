@@ -1,0 +1,56 @@
+.container {
+  @include pxRem(max-width, 1152);
+  margin: auto;
+}
+
+.flex-center-x {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+.flex-end-x {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-start-y {
+  display: flex;
+  align-items: start;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-end-x {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-start-x {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-between-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    @include pxRem(max-width, 327);
+    margin: auto;
+  }
+}

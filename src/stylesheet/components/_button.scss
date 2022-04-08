@@ -1,0 +1,38 @@
+.btn {
+  @include pxRem(padding, 6 16);
+  @include pxRem(font-size, 14);
+  @include pxRem(border-radius, 4);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+  cursor: pointer;
+  &-primary {
+    background-color: map-get($color, primary);
+  }
+  span {
+    color: map-get($color, white-a);
+  }
+  &-outline {
+    @include pxRem(padding, 5 10);
+    border: 1px solid map-get($color, gray-bd);
+  }
+  &-submit {
+    @include pxRem(padding, 10 20);
+    @include pxRem(width, 300);
+    @include pxRem(font-size, 20);
+    @include pxRem(border-radius, 30);
+    background-color: map-get($color, primary);
+    color: map-get($color, white-a);
+    display: initial;
+    font-weight: bold;
+  }
+  &-secondary {
+    background-color: map-get($color, secondary);
+  }
+  &:hover {
+    background-color: map-get($color, primary-hover);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}
