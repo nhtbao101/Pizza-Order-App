@@ -11,7 +11,6 @@ const CustomerInfo = () => {
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm();
 
@@ -23,8 +22,6 @@ const CustomerInfo = () => {
     dispatch(updateCustomerInfo(data));
     navigate(-1);
   };
-
-  console.log('err', errors);
 
   return (
     <div className="customer-info">
@@ -62,7 +59,7 @@ const CustomerInfo = () => {
                 message: 'Postal code is invalid',
               },
               validate: (value) =>
-                value.replace(/-/g, '')?.length == 7 || 'Postal code is invalid',
+                value.replace(/-/g, '')?.length === 7 || 'Postal code is invalid',
             })}
           />
           <Input

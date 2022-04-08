@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { setCurrentPrd } from '../../stores/product.slice';
@@ -13,6 +13,7 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+
   useEffect(() => {
     const getPrd = pizzaList.filter((prd) => +prd.id === +id)[0];
     const currentPrd = {
@@ -24,7 +25,7 @@ const ProductDetail = () => {
     };
     setProduct(currentPrd);
     dispatch(setCurrentPrd(currentPrd));
-  }, []);
+  }, [id]);
 
   return (
     <div>
