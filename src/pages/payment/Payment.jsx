@@ -1,10 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
 import valid from 'card-validator';
 
 import { Input } from '../../components/partials/Input';
-import { clearCart } from '../../stores/cart.slice';
+import { cartItem, clearCart } from '../../stores/cart.slice';
+import { customerInfo } from '../../stores/customerInfo.slice';
 
 const Payment = () => {
   const {
@@ -16,11 +17,22 @@ const Payment = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const cart = useSelector(cartItem);
+  const infoOfCustomer = useSelector(customerInfo);
+
+  console.log(cart, infoOfCustomer);
   const onSubmit = (data) => {
-    localStorage.removeItem('cart');
-    dispatch(clearCart());
-    alert('Order Success');
-    navigate('/');
+    if (cart.length === 0) {
+      alert('Cart is empty, please buy something!');
+      navigate('/');
+    } else if (!infoOfCustomer) {
+      navigate('/customerInfo');
+    } else {
+      localStorage.removeItem('cart');
+      dispatch(clearCart());
+      alert('Order Success! Pizza will be delivered to you in 5 minutes');
+      navigate('/');
+    }
   };
 
   return (
