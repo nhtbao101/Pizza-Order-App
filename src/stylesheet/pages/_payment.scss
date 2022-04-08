@@ -6,16 +6,16 @@
     border: 1px solid map-get($color, gray-bd);
   }
   .box {
-    @include pxRem(padding, 30);
+    @include pxRem(padding, 15 50);
     @include pxRem(max-width, 600);
     @include pxRem(border-radius, 20);
-    background-color: map-get($color, primary);
+    background-color: map-get($color, blue-a);
     margin: auto;
     span {
-      color: map-get($color, black-a);
+      color: map-get($color, white-a);
     }
     .text-error {
-      color: map-get($color, white-a);
+      color: map-get($color, err-msg-2);
     }
     input {
       @include pxRem(font-size, 18);
@@ -24,8 +24,12 @@
   .button-submit {
     @include pxRem(margin-top, 40);
     text-align: center;
-    .btn-submit:hover {
-      background-color: map-get($color, primary-hover);
+
+    .btn-submit {
+      background-color: map-get($color, blue-a);
+      &:hover {
+        background-color: map-get($color, blue-hv);
+      }
     }
   }
 }

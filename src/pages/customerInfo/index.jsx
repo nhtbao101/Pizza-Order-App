@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
 
-import { NUMBER_PATTERN, POSTAL_CODE_PATTERN } from '../../constants/formValidate';
+import { PHONE_NUMBER_PATTERN, POSTAL_CODE_PATTERN } from '../../constants/formValidate';
 
 import { Input } from '../../components/partials/Input';
 import { updateCustomerInfo } from '../../stores/customerInfo.slice';
@@ -26,6 +26,7 @@ const CustomerInfo = () => {
   return (
     <div className="customer-info">
       <div className="container">
+        <h1 className="page-title">Customer infomation</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input
             label="Name"
@@ -42,7 +43,7 @@ const CustomerInfo = () => {
             {...register('phone', {
               required: 'Phone number is required',
               pattern: {
-                value: NUMBER_PATTERN,
+                value: PHONE_NUMBER_PATTERN,
                 message: 'Phone number is invalid',
               },
             })}
