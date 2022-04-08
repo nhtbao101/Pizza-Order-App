@@ -26,6 +26,7 @@ const CustomerInfo = () => {
   return (
     <div className="customer-info">
       <div className="container">
+        <h1 className="page-title">Customer infomation</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input
             label="Name"

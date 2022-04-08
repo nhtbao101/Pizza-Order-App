@@ -1,9 +1,9 @@
 .customer-info {
+  @include pxRem(padding, 40 0);
+
   form {
     max-width: 800px;
     margin: auto;
-  }
-  .input-form {
   }
   .button-submit {
     @include pxRem(margin-top, 40);

@@ -38,6 +38,7 @@ const Payment = () => {
   return (
     <section className="payment-section">
       <div className="container">
+        <h1 className="page-title">Payment info</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="box">
             <Input
