@@ -2,7 +2,10 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
 
-import { PHONE_NUMBER_PATTERN, POSTAL_CODE_PATTERN } from '../../constants/formValidate';
+import {
+  PHONE_NUMBER_PATTERN,
+  POSTAL_CODE_PATTERN
+} from '../../constants/formValidate';
 
 import { Input } from '../../components/partials/Input';
 import { updateCustomerInfo } from '../../stores/customerInfo.slice';
@@ -11,7 +14,7 @@ const CustomerInfo = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
 
   const navigate = useNavigate();
@@ -22,6 +25,8 @@ const CustomerInfo = () => {
     dispatch(updateCustomerInfo(data));
     navigate(-1);
   };
+
+  // console.log('1');
 
   return (
     <div className="customer-info">
@@ -44,8 +49,8 @@ const CustomerInfo = () => {
               required: 'Phone number is required',
               pattern: {
                 value: PHONE_NUMBER_PATTERN,
-                message: 'Phone number is invalid',
-              },
+                message: 'Phone number is invalid'
+              }
             })}
           />
           <Input
@@ -57,10 +62,11 @@ const CustomerInfo = () => {
               required: 'Postal code is required',
               pattern: {
                 value: POSTAL_CODE_PATTERN,
-                message: 'Postal code is invalid',
+                message: 'Postal code is invalid'
               },
               validate: (value) =>
-                value.replace(/-/g, '')?.length === 7 || 'Postal code is invalid',
+                value.replace(/-/g, '')?.length === 7 ||
+                'Postal code is invalid'
             })}
           />
           <Input
@@ -69,7 +75,7 @@ const CustomerInfo = () => {
             placeholder="House number"
             errors={errors}
             {...register('houseNumber', {
-              required: 'House number is required',
+              required: 'House number is required'
             })}
           />
           <div className="button-submit mt-2">
